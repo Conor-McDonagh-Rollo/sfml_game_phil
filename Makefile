@@ -1,23 +1,35 @@
-CXX			:= g++
-CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g -I.
+# Added folling to deal with building on Windows or Linux
+# For Windows the SFML_SDK Path Environment variable needs to be set.
+# Practical Guide has instructions on how to set SFML_SDL env var.
 
-MSG_START	:= "Build Started"
+ifeq ($(OS),Windows_NT)
+    os  := Windows
+    LIBRARIES	:= -L${SFML_SDK}\lib -Llibssfml-graphics -Llibssfml-window -Llibssfml-system
+    CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g -I${SFML_SDK}\include -I.
+else
+    os := $(shell uname -s)
+    LIBRARIES	:= -Lsfml-graphics -Lsfml-window -Lsfml-system
+    CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g -I.
+endif
+
+
+CXX         := g++
+
+MSG_START	:= "Build Started on "
 MSG_END		:= "Build Complete"
 MSG_CLEAN	:= "Cleaning up"
-
-LIBRARIES	:= -lsfml-graphics -lsfml-window -lsfml-system
 
 BUILD_DIR	:= ./bin
 SRC_DIR		:= ./src
 
 TARGET		:= ${BUILD_DIR}/sampleapp.bin
 
-SRC			:= ${SRC_DIR}/main.cpp ${SRC_DIR}/Game.cpp ${SRC_DIR}/Player.cpp ${SRC_DIR}/NPC.cpp ${SRC_DIR}/Character.cpp
+SRC		    := ${SRC_DIR}/main.cpp ${SRC_DIR}/Game.cpp ${SRC_DIR}/Player.cpp ${SRC_DIR}/NPC.cpp ${SRC_DIR}/Character.cpp
 
-all			:= build
+all		    := build
 
 build:
-	@echo ${MSG_START}
+	@echo ${MSG_START} ${os}
 
 	#remove directory if it exits and then create directory
 	rm -rf ${BUILD_DIR} || true
