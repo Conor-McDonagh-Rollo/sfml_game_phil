@@ -5,11 +5,13 @@
 ifeq ($(OS),Windows_NT)
     os  := Windows
     LIBRARIES	:= -L${SFML_SDK}\lib -Llibssfml-graphics -Llibssfml-window -Llibssfml-system
-    CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g -I${SFML_SDK}\include -I.
+    CXXFLAGS 	:= -std=c++11 -DSFML_STATIC -Wall -Wextra -Werror -g -I${SFML_SDK}\include -I.
+	TARGET		:= ${BUILD_DIR}/sampleapp.exe
 else
     os := $(shell uname -s)
     LIBRARIES	:= -Lsfml-graphics -Lsfml-window -Lsfml-system
     CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g -I.
+	TARGET		:= ${BUILD_DIR}/sampleapp.bin
 endif
 
 
@@ -21,8 +23,6 @@ MSG_CLEAN	:= "Cleaning up"
 
 BUILD_DIR	:= ./bin
 SRC_DIR		:= ./src
-
-TARGET		:= ${BUILD_DIR}/sampleapp.bin
 
 SRC		    := ${SRC_DIR}/main.cpp ${SRC_DIR}/Game.cpp ${SRC_DIR}/Player.cpp ${SRC_DIR}/NPC.cpp ${SRC_DIR}/Character.cpp
 
