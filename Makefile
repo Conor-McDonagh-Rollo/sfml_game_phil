@@ -14,7 +14,7 @@ ifeq ($(OS),Windows_NT)
 	# Tested with SFML 2.5.1 GCC 7.3.0 MinGW (SEH) - 64-bit
 	SDK			:=${SFML_SDK}
 	SDK_PATH	:=$(subst \,/,$(subst C:\,/c/,$(SDK)))
-	INCLUDES	:= -I.
+	INCLUDES	:= -I${SDK_PATH}/include -I.
 	LIBS		:= -L.
 	CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g ${INCLUDES}
 	LIBRARIES	:= -lsfml-graphics -lsfml-window -lsfml-system
