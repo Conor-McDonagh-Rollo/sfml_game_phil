@@ -1,35 +1,32 @@
-# Added folling to deal with building on Windows or Linux
-# For Windows the SFML_SDK Path Environment variable needs to be set.
-# Practical Guide has instructions on how to set SFML_SDL env var.
+CXX			:= g++
 
 BUILD_DIR	:= ./bin
 SRC_DIR		:= ./src
 
-ifeq ($(OS),Windows_NT)
-    os  := Windows
-    LIBRARIES	:= -L${SFML_SDK}\lib -Llibssfml-main -Llibssfml-system -Llibssfml-window -Llibssfml-graphics
-    CXXFLAGS 	:= -std=c++11 -DSFML_STATIC -Wall -Wextra -Werror -g -I${SFML_SDK}\include -I.
-	TARGET		:= ${BUILD_DIR}/sampleapp.exe
-else
-    os := $(shell uname -s)
-    LIBRARIES	:= -Lsfml-main -Lsfml-system -Lsfml-window -Lsfml-graphics
-    CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g -I.
-	TARGET		:= ${BUILD_DIR}/sampleapp.bin
-endif
-
-
-CXX         := g++
-
-MSG_START	:= "Build Started on "
+MSG_START	:= "Build Started"
 MSG_END		:= "Build Complete"
 MSG_CLEAN	:= "Cleaning up"
 
-BUILD_DIR	:= ./bin
-SRC_DIR		:= ./src
 
-SRC		    := ${SRC_DIR}/main.cpp ${SRC_DIR}/Game.cpp ${SRC_DIR}/Player.cpp ${SRC_DIR}/NPC.cpp ${SRC_DIR}/Character.cpp
+ifeq ($(OS),Windows_NT)
+    os  := Windows
+	INCLUDES	:= -I.
+	LIBS		:= -L.
+	CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g ${INCLUDES}
+	LIBRARIES	:= -lsfml-graphics -lsfml-window -lsfml-system
+	TARGET		:= ${BUILD_DIR}/sampleapp.exe
+else
+    os := $(shell uname -s)
+	INCLUDES	:= -I.
+	LIBS		:= -L.
+	CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g ${INCLUDES}
+	LIBRARIES	:= -lsfml-graphics -lsfml-window -lsfml-system
+	TARGET		:= ${BUILD_DIR}/sampleapp.bin
+endif
 
-all		    := build
+SRC			:= ${SRC_DIR}/main.cpp ${SRC_DIR}/Game.cpp ${SRC_DIR}/Player.cpp ${SRC_DIR}/NPC.cpp ${SRC_DIR}/Character.cpp
+
+all			:= build
 
 build:
 	@echo ${MSG_START} ${os}
@@ -51,7 +48,7 @@ build:
 	#create bin directory
 	mkdir ${BUILD_DIR}
 
-	${CXX} ${CXXFLAGS} -o ${TARGET} ${SRC} ${LIBRARIES}
+	${CXX} ${CXXFLAGS} -o ${TARGET} ${SRC} ${LIBS} ${LIBRARIES}
 	@echo ${MSG_END}
 	./${TARGET}
 
