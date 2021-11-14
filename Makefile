@@ -15,16 +15,16 @@ ifeq ($(OS),Windows_NT)
 	SDK			:=${SFML_SDK}
 	SDK_PATH	:=$(subst \,/,$(subst C:\,/c/,$(SDK)))
 	INCLUDES	:= -I${SDK_PATH}/include -I.
-	LIBS		:= -L${SDK_PATH}/lib -L.
+	LIBS		:= -L${SDK_PATH}/lib
 	CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g ${INCLUDES}
-	LIBRARIES	:= -Llibssfml-graphics -Llibssfml-window -Llibssfml-system
+	LIBRARIES	:= -llibssfml-graphics -llibssfml-window -llibssfml-system
 	TARGET		:= ${BUILD_DIR}/sampleapp.exe
 else
     os := $(shell uname -s)
 	INCLUDES	:= -I.
 	LIBS		:= -L.
 	CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g ${INCLUDES}
-	LIBRARIES	:= -Lsfml-graphics -Lsfml-window -Lsfml-system
+	LIBRARIES	:= -lsfml-graphics -lsfml-window -lsfml-system
 	TARGET		:= ${BUILD_DIR}/sampleapp.bin
 endif
 
@@ -52,7 +52,7 @@ build:
 	#create bin directory
 	mkdir 		${BUILD_DIR}
 
-	${CXX} 	${CXXFLAGS} 	-o 	${TARGET} 	${SRC} 	${LIBS} 	${LIBRARIES}
+	${CXX} ${CXXFLAGS} -o ${TARGET} ${SRC} ${LIBS} ${LIBRARIES}
 	
 	@echo ${MSG_END}
 	
