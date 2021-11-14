@@ -37,6 +37,7 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
 * Restart MSYS64 Bash and check that enviroment variable exists by typing `echo {SFML_SDK}` in terminal. Also check that you can see includes, libs and DLLs
 ![Verify Environment Variable](./images/Verify_SFML_SDK_Env_Variable.png) 
 * Create a directory for project and Clone repository
+![Create Directory and Clone](./images/CloneRepo.png) 
 * Navigate to project folder
 * type ```make```
 
