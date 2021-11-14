@@ -38,6 +38,8 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
 ![Verify Environment Variable](./images/Verify_SFML_SDK_Env_Variable.png) 
 * Create a directory e.g. `Projects` for repository, then `cd c:/Projects' and Clone repository
 ![Create Directory and Clone](./images/CloneRepo.png) 
+* Ensure Windows SDK is installed, SFML depends on OpenGL libs. Windows SDK can be downloaded from [Microsoft Developer Website](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/) . Tested with version 19041.0.
+![Windows SDK](./images/Window10SDK.png) 
 * Navigate to cloned project folder `sfml_game`
 * type ```make```
 
