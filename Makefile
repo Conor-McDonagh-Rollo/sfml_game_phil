@@ -13,9 +13,7 @@ ifeq ($(OS),Windows_NT)
 	# Make sure your Env Variable is set to SFML
 	# Tested with SFML 2.5.1 GCC 7.3.0 MinGW (SEH) - 64-bit
 	SDK			:=${SFML_SDK}
-	SDK_PATH	:=$(subst \,/,$(subst C:\,/c/,$(SDK))) # assumes SDK is on C Drive
-	@echo		${SDK_PATH}
-
+	SDK_PATH	:=$(subst \,/,$(subst C:\,/c/,$(SDK)))
 	INCLUDES	:= -I.
 	LIBS		:= -L.
 	CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g ${INCLUDES}
