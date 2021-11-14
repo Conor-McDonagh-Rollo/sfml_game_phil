@@ -15,7 +15,7 @@ ifeq ($(OS),Windows_NT)
 	SDK			:=${SFML_SDK}
 	SDK_PATH	:=$(subst \,/,$(subst C:\,/c/,$(SDK)))
 	INCLUDES	:= -I${SDK_PATH}/include -I.
-	LIBS		:= -L.
+	LIBS		:= -L${SDK_PATH}/lib -L.
 	CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g ${INCLUDES}
 	LIBRARIES	:= -lsfml-graphics -lsfml-window -lsfml-system
 	TARGET		:= ${BUILD_DIR}/sampleapp.exe
