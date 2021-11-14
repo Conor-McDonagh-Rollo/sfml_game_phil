@@ -11,13 +11,19 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
 
 ## Installation Windows
 * Download and install [MSYS64](https://www.msys2.org/)
-![MSYS64](./images/MsysWebsite.png)\
+![MSYS64](./images/MsysWebsite.png)  
 * Open MSYS Bash
-    ** Update msys ```pacman -Syu``` after this has complete restart MSYS Bash and run ```pacman -Su```
+    ** STEP 1 of Updating msys ```pacman -Syu``` this will shutdown bash when complete.
+![Pacman Update Step 1](./images/PacmanUpdateStep1.png)  
+    ** STEP 2 of Updating msys after this has complete restart MSYS Bash and run ```pacman -Su```
+![Pacman Update Step 2](./images/PacmanUpdateStep2.png) 
 * Open MSYS Bash and install 
     ** gcc ```pacman -S gcc```
+    ![Install GCC](./images/InstallGCC.png) 
     ** Install git ```pacman -S git```
+    ![Install Git](./images/InstallGit.png) 
     ** Install SFML ```pacman -S mingw-w64-x86_64-sfml```
+    ![Install SFML](./images/InstallSFML.png) 
 * Download GCC 7.3.0 MinGW (SEH) - 64-bit from [SFML Website](https://www.sfml-dev.org/download/sfml/2.5.1/)
     ** Its good practice to place in `c:\devtools\SFML`
 * Setup a Windows Environment Variable which points to where `GCC 7.3.0 MinGW (SEH) - 64-bit` is located
