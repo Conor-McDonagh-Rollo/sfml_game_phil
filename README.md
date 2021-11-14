@@ -11,6 +11,7 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
 
 ## Installation Windows
 * Download and install [MSYS64](https://www.msys2.org/)
+![MSYS64](./images/MsysWebsite.png)\
 * Open MSYS Bash
     ** Update msys ```pacman -Syu``` after this has complete restart MSYS Bash and run ```pacman -Su```
 * Open MSYS Bash and install 
