@@ -36,9 +36,9 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
 ![Set Environment Variable](./images/EnvironmentVariable.png) 
 * Restart MSYS64 Bash and check that enviroment variable exists by typing `echo {SFML_SDK}` in terminal. Also check that you can see includes, libs and DLLs
 ![Verify Environment Variable](./images/Verify_SFML_SDK_Env_Variable.png) 
-* Create a directory for project and Clone repository
+* Create a directory e.g. `Projects` for repository, then `cd c:/Projects' and Clone repository
 ![Create Directory and Clone](./images/CloneRepo.png) 
-* Navigate to project folder
+* Navigate to cloned project folder `sfml_game`
 * type ```make```
 
 ## What is this repository for? ##
