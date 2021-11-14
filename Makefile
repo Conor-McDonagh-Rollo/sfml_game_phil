@@ -2,6 +2,9 @@
 # For Windows the SFML_SDK Path Environment variable needs to be set.
 # Practical Guide has instructions on how to set SFML_SDL env var.
 
+BUILD_DIR	:= ./bin
+SRC_DIR		:= ./src
+
 ifeq ($(OS),Windows_NT)
     os  := Windows
     LIBRARIES	:= -L${SFML_SDK}\lib -Llibssfml-graphics -Llibssfml-window -Llibssfml-system
@@ -30,6 +33,17 @@ all		    := build
 
 build:
 	@echo ${MSG_START} ${os}
+
+	@echo "***	C++ Compiler	***"
+	@echo ${CXX}
+	@echo "*** C++ Flags		***"
+	@echo ${CXXFLAGS}
+	@echo "*** LIBRARIES		***"
+	@echo ${LIBRARIES}
+	@echo "*** SRC		***"
+	@echo ${SRC}
+	@echo "*** LIBRARIES		***"
+	@echo ${TARGET}
 
 	#remove directory if it exits and then create directory
 	rm -rf ${BUILD_DIR} || true
