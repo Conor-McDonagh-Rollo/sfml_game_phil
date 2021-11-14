@@ -7,12 +7,12 @@ SRC_DIR		:= ./src
 
 ifeq ($(OS),Windows_NT)
     os  := Windows
-    LIBRARIES	:= -L${SFML_SDK}\lib -Llibssfml-graphics -Llibssfml-window -Llibssfml-system
+    LIBRARIES	:= -L${SFML_SDK}\lib -Llibssfml-main -Llibssfml-system -Llibssfml-window -Llibssfml-graphics
     CXXFLAGS 	:= -std=c++11 -DSFML_STATIC -Wall -Wextra -Werror -g -I${SFML_SDK}\include -I.
 	TARGET		:= ${BUILD_DIR}/sampleapp.exe
 else
     os := $(shell uname -s)
-    LIBRARIES	:= -Lsfml-graphics -Lsfml-window -Lsfml-system
+    LIBRARIES	:= -Lsfml-main -Lsfml-system -Lsfml-window -Lsfml-graphics
     CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g -I.
 	TARGET		:= ${BUILD_DIR}/sampleapp.bin
 endif
