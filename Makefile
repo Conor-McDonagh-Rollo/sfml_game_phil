@@ -1,15 +1,21 @@
-CXX			:= g++
+CXX				:= g++
 
-BUILD_DIR	:= ./bin
-SRC_DIR		:= ./src
+BUILD_DIR		:= ./bin
+SRC_DIR			:= ./src
 
-MSG_START	:= "Build Started"
-MSG_END		:= "Build Complete"
-MSG_CLEAN	:= "Cleaning up"
+MSG_START		:= "Build Started"
+MSG_END			:= "Build Complete"
+MSG_CLEAN		:= "Cleaning up"
 
 
 ifeq ($(OS),Windows_NT)
     os  := Windows
+	# Make sure your Env Variable is set to SFML
+	# Tested with SFML 2.5.1 GCC 7.3.0 MinGW (SEH) - 64-bit
+	SDK			:=${SFML_SDK}
+	SDK_PATH	:=$(subst \,/,$(subst C:\,/c/,$(SDK))) # assumes SDK is on C Drive
+	@echo		${SDK_PATH}
+
 	INCLUDES	:= -I.
 	LIBS		:= -L.
 	CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g ${INCLUDES}
@@ -24,36 +30,39 @@ else
 	TARGET		:= ${BUILD_DIR}/sampleapp.bin
 endif
 
-SRC			:= ${SRC_DIR}/main.cpp ${SRC_DIR}/Game.cpp ${SRC_DIR}/Player.cpp ${SRC_DIR}/NPC.cpp ${SRC_DIR}/Character.cpp
+SRC				:= ${SRC_DIR}/main.cpp ${SRC_DIR}/Game.cpp ${SRC_DIR}/Player.cpp ${SRC_DIR}/NPC.cpp ${SRC_DIR}/Character.cpp
 
-all			:= build
+all				:= build
 
 build:
-	@echo ${MSG_START} ${os}
+	@echo 	${MSG_START} ${os}
 
-	@echo "***	C++ Compiler	***"
-	@echo ${CXX}
-	@echo "*** C++ Flags		***"
-	@echo ${CXXFLAGS}
-	@echo "*** LIBRARIES		***"
-	@echo ${LIBRARIES}
-	@echo "*** SRC		***"
-	@echo ${SRC}
-	@echo "*** LIBRARIES		***"
-	@echo ${TARGET}
+	@echo 		"***	C++ Compiler	***"
+	@echo 		${CXX}
+	@echo 		"*** C++ Flags		***"
+	@echo 		${CXXFLAGS}
+	@echo 		"*** LIBRARIES		***"
+	@echo 		${LIBRARIES}
+	@echo 		"*** SRC		***"
+	@echo 		${SRC}
+	@echo 		"*** LIBRARIES		***"
+	@echo 		${TARGET}
 
 	#remove directory if it exits and then create directory
-	rm -rf ${BUILD_DIR} || true
+	rm -rf 		${BUILD_DIR} 	|| 	true
 
 	#create bin directory
-	mkdir ${BUILD_DIR}
+	mkdir 		${BUILD_DIR}
 
-	${CXX} ${CXXFLAGS} -o ${TARGET} ${SRC} ${LIBS} ${LIBRARIES}
+	${CXX} 	${CXXFLAGS} 	-o 	${TARGET} 	${SRC} 	${LIBS} 	${LIBRARIES}
+	
 	@echo ${MSG_END}
+	
+	# Run TARGET
 	./${TARGET}
 
 .PHONY: clean
 
 clean:
-	@echo ${MSG_CLEAN}
-	rm -rf ${BUILD_DIR} || true
+	@echo 		${MSG_CLEAN}
+	rm -rf 		${BUILD_DIR} || true
