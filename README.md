@@ -25,7 +25,11 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
     ** Install SFML ```pacman -S mingw-w64-x86_64-sfml```
     ![Install SFML](./images/InstallSFML.png) 
 * Download GCC 7.3.0 MinGW (SEH) - 64-bit from [SFML Website](https://www.sfml-dev.org/download/sfml/2.5.1/)
+![GCC SFML](./images/DownloadSFMLGCC.png) 
     ** Its good practice to place in `c:\devtools\SFML`
+    ![GCC SFML](./images/ExtractToDevtools.png) 
+* Before proceeding to next step ensure your directory structure looks like image below
+![GCC SFML](./images/DirectoryStructure.png) 
 * Setup a Windows Environment Variable which points to where `GCC 7.3.0 MinGW (SEH) - 64-bit` is located
 * Clone repository
 * Navigate to project folder
