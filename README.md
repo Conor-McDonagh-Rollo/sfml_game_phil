@@ -38,7 +38,7 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
 >   * Before proceeding to next step ensure your directory structure looks like image below  
 ![GCC SFML](./images/DirectoryStructure.png)
 
-* **STEP 5** Setup a Windows Environment Variable which points to where `GCC 7.3.0 MinGW (SEH) - 64-bit` is located  
+* **STEP 5** Setup a Windows Environment Variable which points to where `GCC 7.3.0 MinGW (SEH) - 64-bit` is located, also set the location of DLLs in Windows Path.
 ![Set Environment Variable](./images/EnvironmentVariable.png)
 ![Set Environment Variable](./images/EnvironmentVariableBinPath.png)
 >   * Restart MSYS64 Bash and check that enviroment variable exists by typing `echo {SFML_SDK}` in terminal. Also check that you can see includes, libs and DLLs  
