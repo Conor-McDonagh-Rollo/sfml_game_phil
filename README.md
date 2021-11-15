@@ -7,28 +7,28 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
 * Download Repository
 * Install SFML on debian based distro using ```sudo apt-get install libsfml-dev```
 * Navigate to root of project
-* type ```make```
+* type `make`
 
 ## Installation Windows
 * Download and install [MSYS64](https://www.msys2.org/)
 ![MSYS64](./images/MsysWebsite.png)  
 * Open MSYS Bash
-    ** STEP 1 of Updating msys ```pacman -Syu``` this will shutdown bash when complete.
+** STEP 1 of Updating msys `pacman -Syu` this will shutdown bash when complete.
 ![Pacman Update Step 1](./images/PacmanUpdateStep1.png)  
-    ** STEP 2 of Updating msys after this has complete restart MSYS Bash and run ```pacman -Su```
+** STEP 2 of Updating msys after this has complete restart MSYS Bash and run `pacman -Su`
 ![Pacman Update Step 2](./images/PacmanUpdateStep2.png) 
 * STEP 3 (Note this there are multiple commands below, to get toolchain up and running) Open MSYS Bash and install 
-** gcc ```pacman -S gcc```
+** gcc `pacman -S gcc`
 ![Install GCC](./images/InstallGCC.png) 
-** mingw gcc ```pacman -S mingw-w64-x86_64-gcc```
+** mingw gcc `pacman -S mingw-w64-x86_64-gcc`
 ![Install GCC](./images/InstallMinGWGCC.png) 
-** mingw gdb ```pacman -S mingw-w64-x86_64-gdb```
+** mingw gdb `pacman -S mingw-w64-x86_64-gdb`
 ![Install GCC](./images/InstallMinGWGDB.png) 
-** make ```pacman -S make```
+** make `pacman -S make`
 ![Install GCC](./images/InstallMake.png) 
-** Install git ```pacman -S git```
+** Install git `pacman -S git`
 ![Install Git](./images/InstallGit.png) 
-** Install SFML ```pacman -S mingw-w64-x86_64-sfml```
+** Install SFML `pacman -S mingw-w64-x86_64-sfml`
 ![Install SFML](./images/InstallSFML.png) 
 * Download GCC 7.3.0 MinGW (SEH) - 64-bit from [SFML Website](https://www.sfml-dev.org/download/sfml/2.5.1/)
 ![GCC SFML](./images/DownloadSFMLGCC.png) 
@@ -45,11 +45,11 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
 * Ensure Windows SDK is installed, SFML depends on OpenGL libs. Windows SDK can be downloaded from [Microsoft Developer Website](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/) . Tested with version 19041.0.
 ![Windows SDK](./images/Window10SDK.png) 
 * Navigate to cloned project folder `sfml_game`
-* type ```make```
+* Type `make` in MSYS Bash Terminal
 ![Install GCC](./images/Make.png) 
 
 ## What is this repository for? ##
-* Getting started with Visual Studio Code, SFML and Makefiles on Linux
+* Getting started with Visual Studio Code, SFML and Makefiles on Linux and Windows (Note Makefile will work on both as long as toolchain is setup correctly)
 * This is a great Tutorial to get this project running on [Windows](https://www.youtube.com/watch?v=Ljhpsdz8Ouo)
 
 ## Who do I talk to? ##
