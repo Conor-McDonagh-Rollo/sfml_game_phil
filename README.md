@@ -21,7 +21,7 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
 		* **STEP 3.3** **mingw gdb** `pacman -S mingw-w64-x86_64-gdb` ![Install GDB](./images/InstallMinGWGDB.png)
 		* **STEP 3.4** **make** `pacman -S make` ![Install Make](./images/InstallMake.png)
 		* **STEP 3.5** **git** `pacman -S git` ![Install Git](./images/InstallGit.png)
-		* **STEP 3.6** **SFML** `pacman -S mingw-w64-x86_64-sfml`![Install SFML](./images/InstallSFML.png) see [MSYS Website Packages](https://packages.msys2.org/package/mingw-w64-x86_64-sfml).
+		* **STEP 3.6** **SFML** `pacman -S mingw-w64-x86_64-sfml`see [MSYS Website Packages](https://packages.msys2.org/package/mingw-w64-x86_64-sfml).![Install SFML](./images/InstallSFML.png) 
 
 * **STEP 4** Download GCC 7.3.0 MinGW (SEH) - 64-bit from [SFML Website](https://www.sfml-dev.org/download/sfml/2.5.1/) \  ![GCC SFML](./images/DownloadSFMLGCC.png)
     * Its good practice to place in `c:\devtools\SFML`![GCC SFML](./images/ExtractToDevtools.png)
