@@ -12,6 +12,7 @@ ifeq ($(OS),Windows_NT)
     os  := Windows
 	# Make sure your Env Variable is set to SFML
 	# Tested with SFML 2.5.1 GCC 7.3.0 MinGW (SEH) - 64-bit
+	# Convert Windows directory path to UNIX Path
 	SDK			:=${SFML_SDK}
 	SDK_PATH	:=$(subst \,/,$(subst C:\,/c/,$(SDK)))
 	INCLUDES	:= -I${SDK_PATH}/include -I.
@@ -64,5 +65,3 @@ build:
 clean:
 	@echo 		${MSG_CLEAN}
 	rm -rf 		${BUILD_DIR} || true
-
-# g++ -std=c++11 -Wall -Wextra -Werror -g -I. -o ./bin/sampleapp.bin ./src/main.cpp ./src/Game.cpp ./src/Player.cpp ./src/NPC.cpp ./src/Character.cpp -lsfml-graphics -lsfml-window -lsfml-system
