@@ -16,17 +16,17 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
 	* **STEP 1** of Updating msys `pacman -Syu` this will shutdown bash when complete.![Pacman Update Step 1](./images/PacmanUpdateStep1.png)
 	* **STEP 2** of Updating msys after this has complete restart MSYS Bash and run `pacman -Su`![Pacman Update Step 2](./images/PacmanUpdateStep2.png)
 	* **STEP 3** (Note this there are multiple commands below, to get toolchain up and running) Open MSYS Bash and install
-        >		* **STEP 3.1** **gcc** `pacman -S gcc`  
+>	    * **STEP 3.1** **gcc** `pacman -S gcc`  
         ![Install GCC](./images/InstallGCC.png)
-        >		* **STEP 3.2** **mingw gcc** `pacman -S mingw-w64-x86_64-gcc` 
+>		* **STEP 3.2** **mingw gcc** `pacman -S mingw-w64-x86_64-gcc` 
         ![Install MinGW GCC](./images/InstallMinGWGCC.png)
-        >		* **STEP 3.3** **mingw gdb** `pacman -S mingw-w64-x86_64-gdb` 
+>		* **STEP 3.3** **mingw gdb** `pacman -S mingw-w64-x86_64-gdb` 
         ![Install GDB](./images/InstallMinGWGDB.png)
-        >		* **STEP 3.4** **make** `pacman -S make` 
+>		* **STEP 3.4** **make** `pacman -S make` 
         ![Install Make](./images/InstallMake.png)
-        >		* **STEP 3.5** **git** `pacman -S git` 
+>		* **STEP 3.5** **git** `pacman -S git` 
         ![Install Git](./images/InstallGit.png)
-        >		* **STEP 3.6** **SFML** `pacman -S mingw-w64-x86_64-sfml`see [MSYS Website Packages](https://packages.msys2.org/package/mingw-w64-x86_64-sfml).
+>		* **STEP 3.6** **SFML** `pacman -S mingw-w64-x86_64-sfml`see [MSYS Website Packages](https://packages.msys2.org/package/mingw-w64-x86_64-sfml).
         ![Install SFML](./images/InstallSFML.png) 
 
     * **STEP 4** Download GCC 7.3.0 MinGW (SEH) - 64-bit from [SFML Website](https://www.sfml-dev.org/download/sfml/2.5.1/) ![GCC SFML](./images/DownloadSFMLGCC.png)
@@ -46,7 +46,7 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
     ![Windows SDK](./images/Window10SDK.png)
 
     * **STEP 8** Navigate to cloned project folder `sfml_game`
-    >    * Type `make` in MSYS Bash Terminal
+>    * Type `make` in MSYS Bash Terminal
     ![Install GCC](./images/Make.png)
 
 ## What is this repository for? ##
