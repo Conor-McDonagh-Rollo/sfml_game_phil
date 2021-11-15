@@ -64,3 +64,5 @@ build:
 clean:
 	@echo 		${MSG_CLEAN}
 	rm -rf 		${BUILD_DIR} || true
+
+# g++ -std=c++11 -Wall -Wextra -Werror -g -I. -o ./bin/sampleapp.bin ./src/main.cpp ./src/Game.cpp ./src/Player.cpp ./src/NPC.cpp ./src/Character.cpp -lsfml-graphics -lsfml-window -lsfml-system
