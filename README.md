@@ -19,49 +19,50 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
 ** STEP 2 of Updating msys after this has complete restart MSYS Bash and run `pacman -Su`
 ![Pacman Update Step 2](./images/PacmanUpdateStep2.png) \
 
-* STEP 3 (Note this there are multiple commands below, to get toolchain up and running) Open MSYS Bash and install \
-** gcc `pacman -S gcc`
+** STEP 3 (Note this there are multiple commands below, to get toolchain up and running) Open MSYS Bash and install \
+*** gcc `pacman -S gcc`
 ![Install GCC](./images/InstallGCC.png) \
-** mingw gcc `pacman -S mingw-w64-x86_64-gcc`
+
+*** mingw gcc `pacman -S mingw-w64-x86_64-gcc`
 
 ![Install GCC](./images/InstallMinGWGCC.png) \
 
-** mingw gdb `pacman -S mingw-w64-x86_64-gdb`
+*** mingw gdb `pacman -S mingw-w64-x86_64-gdb`
 ![Install GCC](./images/InstallMinGWGDB.png) \
 
-** make `pacman -S make`
+*** make `pacman -S make`
 ![Install GCC](./images/InstallMake.png) \
 
-** Install git `pacman -S git`
+*** Install git `pacman -S git`
 ![Install Git](./images/InstallGit.png) \
 
-** Install SFML `pacman -S mingw-w64-x86_64-sfml`
+*** Install SFML `pacman -S mingw-w64-x86_64-sfml`
 ![Install SFML](./images/InstallSFML.png) \
 
-* Download GCC 7.3.0 MinGW (SEH) - 64-bit from [SFML Website](https://www.sfml-dev.org/download/sfml/2.5.1/)
+** Download GCC 7.3.0 MinGW (SEH) - 64-bit from [SFML Website](https://www.sfml-dev.org/download/sfml/2.5.1/)
 ![GCC SFML](./images/DownloadSFMLGCC.png) \
 
 ** Its good practice to place in `c:\devtools\SFML`
 ![GCC SFML](./images/ExtractToDevtools.png) \
 
-* Before proceeding to next step ensure your directory structure looks like image below
+** Before proceeding to next step ensure your directory structure looks like image below
 ![GCC SFML](./images/DirectoryStructure.png) \
 
-* Setup a Windows Environment Variable which points to where `GCC 7.3.0 MinGW (SEH) - 64-bit` is located
+** Setup a Windows Environment Variable which points to where `GCC 7.3.0 MinGW (SEH) - 64-bit` is located
 ![Set Environment Variable](./images/EnvironmentVariable.png) \
 
-* Restart MSYS64 Bash and check that enviroment variable exists by typing `echo {SFML_SDK}` in terminal. Also check that you can see includes, libs and DLLs
+** Restart MSYS64 Bash and check that enviroment variable exists by typing `echo {SFML_SDK}` in terminal. Also check that you can see includes, libs and DLLs
 ![Verify Environment Variable](./images/Verify_SFML_SDK_Env_Variable.png) \
 
-* Create a directory e.g. `Projects` for repository, then `cd c:/Projects' and Clone repository
+** Create a directory e.g. `Projects` for repository, then `cd c:/Projects' and Clone repository
 ![Create Directory and Clone](./images/CloneRepo.png) \
 
-* Ensure Windows SDK is installed, SFML depends on OpenGL libs. Windows SDK can be downloaded from [Microsoft Developer Website](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/) . Tested with version 19041.0.
+** Ensure Windows SDK is installed, SFML depends on OpenGL libs. Windows SDK can be downloaded from [Microsoft Developer Website](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/) . Tested with version 19041.0.
 ![Windows SDK](./images/Window10SDK.png) \
 
-* Navigate to cloned project folder `sfml_game`  \
+** Navigate to cloned project folder `sfml_game`  \
 
-* Type `make` in MSYS Bash Terminal
+** Type `make` in MSYS Bash Terminal
 ![Install GCC](./images/Make.png) \
 
 ## What is this repository for? ##
