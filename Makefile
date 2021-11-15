@@ -17,7 +17,7 @@ ifeq ($(OS),Windows_NT)
 	INCLUDES	:= -I${SDK_PATH}/include -I.
 	LIBS		:= -L${SDK_PATH}/lib
 	CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g ${INCLUDES}
-	LIBRARIES	:= -llibssfml-graphics -llibssfml-window -llibssfml-system
+	LIBRARIES	:= -llibsfml-graphics -llibsfml-window -llibsfml-system
 	TARGET		:= ${BUILD_DIR}/sampleapp.exe
 else
     os := $(shell uname -s)
