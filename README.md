@@ -17,23 +17,23 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
 ![Pacman Update Step 1](./images/PacmanUpdateStep1.png)  
     ** STEP 2 of Updating msys after this has complete restart MSYS Bash and run ```pacman -Su```
 ![Pacman Update Step 2](./images/PacmanUpdateStep2.png) 
-* Open MSYS Bash and install 
-    ** gcc ```pacman -S gcc```
-    ![Install GCC](./images/InstallGCC.png) 
-    ** mingw gcc ```pacman -S mingw-w64-x86_64-gcc```
-    ![Install GCC](./images/InstallMinGWGCC.png) 
-    ** mingw gdb ```pacman -S mingw-w64-x86_64-gdb```
-    ![Install GCC](./images/InstallMinGWGDB.png) 
-    ** make ```pacman -S make```
-    ![Install GCC](./images/InstallMake.png) 
-    ** Install git ```pacman -S git```
-    ![Install Git](./images/InstallGit.png) 
-    ** Install SFML ```pacman -S mingw-w64-x86_64-sfml```
-    ![Install SFML](./images/InstallSFML.png) 
+* STEP 3 (Note this there are multiple commands below, to get toolchain up and running) Open MSYS Bash and install 
+** gcc ```pacman -S gcc```
+![Install GCC](./images/InstallGCC.png) 
+** mingw gcc ```pacman -S mingw-w64-x86_64-gcc```
+![Install GCC](./images/InstallMinGWGCC.png) 
+** mingw gdb ```pacman -S mingw-w64-x86_64-gdb```
+![Install GCC](./images/InstallMinGWGDB.png) 
+** make ```pacman -S make```
+![Install GCC](./images/InstallMake.png) 
+** Install git ```pacman -S git```
+![Install Git](./images/InstallGit.png) 
+** Install SFML ```pacman -S mingw-w64-x86_64-sfml```
+![Install SFML](./images/InstallSFML.png) 
 * Download GCC 7.3.0 MinGW (SEH) - 64-bit from [SFML Website](https://www.sfml-dev.org/download/sfml/2.5.1/)
 ![GCC SFML](./images/DownloadSFMLGCC.png) 
-    ** Its good practice to place in `c:\devtools\SFML`
-    ![GCC SFML](./images/ExtractToDevtools.png) 
+** Its good practice to place in `c:\devtools\SFML`
+![GCC SFML](./images/ExtractToDevtools.png) 
 * Before proceeding to next step ensure your directory structure looks like image below
 ![GCC SFML](./images/DirectoryStructure.png) 
 * Setup a Windows Environment Variable which points to where `GCC 7.3.0 MinGW (SEH) - 64-bit` is located
