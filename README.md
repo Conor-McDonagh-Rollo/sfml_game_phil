@@ -20,6 +20,10 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
 * Open MSYS Bash and install 
     ** gcc ```pacman -S gcc```
     ![Install GCC](./images/InstallGCC.png) 
+    ** mingw gcc ```pacman -S mingw-w64-x86_64-gcc```
+    ![Install GCC](./images/InstallMinGWGCC.png) 
+    ** mingw gdb ```pacman -S mingw-w64-x86_64-gdb```
+    ![Install GCC](./images/InstallMinGWGDB.png) 
     ** make ```pacman -S make```
     ![Install GCC](./images/InstallMake.png) 
     ** Install git ```pacman -S git```
@@ -42,6 +46,7 @@ SFML is not supported on Cgwin or MSys2 on Windows so it requires a custom insta
 ![Windows SDK](./images/Window10SDK.png) 
 * Navigate to cloned project folder `sfml_game`
 * type ```make```
+![Install GCC](./images/Make.png) 
 
 ## What is this repository for? ##
 * Getting started with Visual Studio Code, SFML and Makefiles on Linux
