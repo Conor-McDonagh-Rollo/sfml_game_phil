@@ -17,14 +17,14 @@ ifeq ($(OS),Windows_NT)
 	SDK_PATH	:=$(subst \,/,$(subst C:\,/c/,$(SDK)))
 	INCLUDES	:= -I${SDK_PATH}/include -I.
 	LIBS		:= -L${SDK_PATH}/lib
-	CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g ${INCLUDES}
+	CXXFLAGS 	:= -std=c++11 -Wextra -Werror -g ${INCLUDES}
 	LIBRARIES	:= -llibsfml-graphics -llibsfml-window -llibsfml-system
 	TARGET		:= ${BUILD_DIR}/sampleapp.exe
 else
     os := $(shell uname -s)
 	INCLUDES	:= -I.
 	LIBS		:= -L.
-	CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g ${INCLUDES}
+	CXXFLAGS 	:= -std=c++11 -Wextra -Werror -g ${INCLUDES}
 	LIBRARIES	:= -lsfml-graphics -lsfml-window -lsfml-system
 	TARGET		:= ${BUILD_DIR}/sampleapp.bin
 endif

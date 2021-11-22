@@ -10,5 +10,8 @@ public:
 	void initialize();
 	void update();
 	void draw();
+
+	sf::Sprite body;
+	sf::Texture tex;
 };
 #endif
